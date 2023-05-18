@@ -1,13 +1,13 @@
 <template>
-  <div id="app">
-    <span>sssss</span>
-  </div>
+    <div id="app">
+        <p>sssss</p>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-  components: {},
+    name: 'App',
+    components: {},
 };
 </script>
 
@@ -15,9 +15,9 @@ export default {
 html,
 body,
 #app {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 </style>
