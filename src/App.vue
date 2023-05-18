@@ -4,16 +4,21 @@
             <el-header class="sys-header">山手線総合評価システム</el-header>
             <el-container class="app-Content-Pannel">
                 <el-aside width="200px" class="sys-menu">菜单</el-aside>
-                <el-main>地图区域</el-main>
+                <el-main class="sys-content">
+                    <MapView />
+                </el-main>
             </el-container>
         </el-container>
     </div>
 </template>
 
 <script>
+import MapView from './components/common/MapView';
 export default {
     name: 'App',
-    components: {},
+    components: {
+        MapView,
+    },
 };
 </script>
 
@@ -38,5 +43,8 @@ body,
 }
 .sys-menu {
     background-color: #c0c4cc;
+}
+.sys-content {
+    padding: 0px !important;
 }
 </style>
