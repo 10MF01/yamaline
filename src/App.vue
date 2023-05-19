@@ -7,8 +7,7 @@
                     <el-menu
                         default-active="1"
                         class="el-menu-vertical-demo"
-                        @open="handleOpen"
-                        @close="handleClose"
+                        @select="handleMenuSelect"
                         background-color="#545c64"
                         text-color="#fff"
                         active-text-color="#ffd04b"
@@ -25,7 +24,7 @@
                     </el-menu>
                 </el-aside>
                 <el-main class="sys-content">
-                    <MapView />
+                    <router-view></router-view>
                 </el-main>
             </el-container>
         </el-container>
@@ -33,18 +32,18 @@
 </template>
 
 <script>
-import MapView from './components/common/MapView';
 export default {
     name: 'App',
-    components: {
-        MapView,
-    },
+    components: {},
     methods: {
-        handleOpen(key, keyPath) {
-            console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-            console.log(key, keyPath);
+        handleMenuSelect(index) {
+            if (index === '1') {
+                //跳转到map界面
+                this.$router.push('/');
+            } else if (index === '2') {
+                //跳转到charts界面
+                this.$router.push('/charts');
+            }
         },
     },
 };
