@@ -3,7 +3,27 @@
         <el-container class="app-Out-Pannel">
             <el-header class="sys-header">山手線総合評価システム</el-header>
             <el-container class="app-Content-Pannel">
-                <el-aside width="200px" class="sys-menu">菜单</el-aside>
+                <el-aside class="sys-menu">
+                    <el-menu
+                        default-active="1"
+                        class="el-menu-vertical-demo"
+                        @open="handleOpen"
+                        @close="handleClose"
+                        background-color="#545c64"
+                        text-color="#fff"
+                        active-text-color="#ffd04b"
+                        :collapse="true"
+                    >
+                        <el-menu-item index="1">
+                            <i class="el-icon-monitor"></i>
+                            <span slot="title">MAP</span>
+                        </el-menu-item>
+                        <el-menu-item index="2">
+                            <i class="el-icon-picture-outline"></i>
+                            <span slot="title">CHARTS</span>
+                        </el-menu-item>
+                    </el-menu>
+                </el-aside>
                 <el-main class="sys-content">
                     <MapView />
                 </el-main>
@@ -18,6 +38,14 @@ export default {
     name: 'App',
     components: {
         MapView,
+    },
+    methods: {
+        handleOpen(key, keyPath) {
+            console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+            console.log(key, keyPath);
+        },
     },
 };
 </script>
@@ -42,7 +70,9 @@ body,
     font-size: 20px;
 }
 .sys-menu {
-    background-color: #c0c4cc;
+    background-color: #545c64;
+    width: 64px !important;
+    overflow: hidden !important;
 }
 .sys-content {
     padding: 0px !important;
